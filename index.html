@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pokémon Card Editor</title>
+</head>
+<body>
+    <main></main>
+    <aside>
+        <!-- Primary info, set etc... -->
+        <div class="content">
+            <h2>Card Configuration</h2>
+            <small>Card Set: </small><select id=""> <option>Sword & Shield</option> </select>
+            <small>Card Type: </small> <select id="">
+                <option>Pokémon</option>
+                <option>Trainer</option>
+                <option>Energy</option>
+            </select>
+            <small>Type: </small> <select id="pk-type" onchange="typeSwitch()">
+                <option>Grass</option>
+                <option>Fire</option>
+                <option>Water</option>
+                <option>Lightning</option>
+                <option>Psychic</option>
+                <option>Fighting</option>
+                <option>Dark</option>
+                <option>Metal</option>
+                <option>Colorless</option>
+            </select>
+            <small>Stage: </small> <select id="stage" onchange="typeSwitch()">
+                <option value="st0">Basic</option>
+                <option value="st1">Stage 1</option>
+                <option value="st2">Stage 2</option>
+            </select>
+        </div>
+
+        <!-- name, hp... -->
+        <div class="content">
+            <h2>Pokémon information</h2>
+            <small>Name: </small> 
+            <input type="text" id="pk-name" placeholder="Ex: Charizard" maxlength="14">
+            <small>Life Points(HP): </small> <input type="number" max="1000" id="hp" placeholder="Máx: 999">
+            <small>Pokedex Data info: </small> <input type="text" id="pkd-data-info">
+        </div>
+
+        <div class="content">
+            <small>Has Ability? <input type="checkbox" id=""></small>
+        </div>
+
+        <!-- Powers -->
+        <div class="content">
+            <h2>Power</h2>
+            <small>Power Name: </small> <input type="text" id="">
+            <small>Power Damage: </small> <input type="text">
+            <small>Power Cost: </small> <div id="moveCost">
+
+            </div>
+            <small>Power Text: </small> <textarea id=""></textarea>
+
+            <small>Has Second Power?  <input type="checkbox" id=""></small>
+        </div>
+
+        <!-- Weakness -->
+        <div class="content">
+            <h2>Weakness</h2>
+            <small>Weakness Type</small> <select id="">
+                <option>Grass</option>
+                <option>Fire</option>
+                <option>Water</option>
+                <option>Lightning</option>
+                <option>Psychic</option>
+                <option>Fighting</option>
+                <option>Dark</option>
+                <option>Metal</option>
+                <option>Colorless</option>
+            </select>
+            <small>Weakness Amount: </small> <input type="number" id="">
+            <small>Resistance Type: </small> <select id="">
+                <option>None</option>
+                <option>Grass</option>
+                <option>Fire</option>
+                <option>Water</option>
+                <option>Lightning</option>
+                <option>Psychic</option>
+                <option>Fighting</option>
+                <option>Dark</option>
+                <option>Metal</option>
+                <option>Colorless</option>
+            </select>
+            <small>Retreat Cost: </small> <input type="number" id="">
+        </div>
+        <!-- Description and image camps -->
+        <div class="content">
+            <h2>Details</h2>
+            <small>Description: </small> <textarea id=""></textarea>
+        </div>
+        <div class="content">
+            <h2>Images</h2>
+            <small>Background image(URL): </small> <input type="file" id="pokemonImage">
+            <label for="pokemonImage"></label>
+            <small>Pokémon Image(URL): </small> <input type="file" id="pokemonImage">
+            <label for="pokemonImage"></label>
+        </div>
+    </aside>
+
+    <!-- The image preview -->
+    <div class="image-preview">
+        <div class="camps-container">
+            <div class="name-camp"></div>
+            <div class="hp-camp"> <small id="mini-hp">HP</small> <p id="hp-number">0</p></div>
+            <div class="pokedex-camp"></div>
+            <div class="desc-camp"></div>
+            <img src="img/cards_template/st0/grass_st0.png" alt="The Pokemon Actualy Image" id="pr-img">
+        </div>
+        
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
