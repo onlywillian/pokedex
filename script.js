@@ -1,3 +1,7 @@
+/* 
+* Objetivo: consertar o stage que multiplica
+*/
+
 const pkName = document.getElementById("pk-name");
 const campName = document.querySelector('.name-camp');
 
@@ -27,7 +31,8 @@ pokedex.addEventListener("keyup", () => {
 })
 
 /* the setting for this function to be called is in the next function. */
-function createStageConfigs() {
+var stageConfigExists = false;
+function createStageConfigs(stage) {
     /* Creating all necessary elements */
     const small = document.createElement("small");
     const input = document.createElement("input");
@@ -35,17 +40,20 @@ function createStageConfigs() {
     const pkInfoContent = document.getElementById('pk-info-content');
     const pkdSmall = document.getElementById("pkd-small");
 
-    /* instancing the elements */
-    pkInfoContent.insertBefore(small, pkdSmall);
-    small.innerHTML = "Previous pokémon:";
-    small.className = "pr-pokemon-info";
-    pkInfoContent.insertBefore(input, pkdSmall);
-    input.setAttribute("type", "text");
-    input.className = "pr-pokemon-text";
-    input.setAttribute("maxLength", "15");
-    document.querySelector(".camps-container")
-    .appendChild(div);
-    div.className = "pr-pokemon-camp";
+    if (stage != "st0") return
+    else {
+        /* instancing the elements */
+        pkInfoContent.insertBefore(small, pkdSmall);
+        small.innerHTML = "Previous pokémon:";
+        small.className = "pr-pokemon-info";
+        pkInfoContent.insertBefore(input, pkdSmall);
+        input.setAttribute("type", "text");
+        input.className = "pr-pokemon-text";
+        input.setAttribute("maxLength", "15");
+        document.querySelector(".camps-container")
+        .appendChild(div);
+        div.className = "pr-pokemon-camp";
+    }
 
     /* Inserting input data */
     input.addEventListener("keyup", () => {
@@ -69,14 +77,14 @@ function typeSwitch() {
     * If the stage is basic, some things will be modified,
     * otherwise it will remove them
     */
-    if (folder != 'st0') createStageConfigs()
+    if (folder != 'st0') createStageConfigs(folder);
     if (folder === 'st0') {
         try {
             document.querySelector(".pr-pokemon-info").remove();
             document.querySelector(".pr-pokemon-camp").remove();
             document.querySelector(".pr-pokemon-text").remove();
         } catch (err) {
-            return
+            console.log(err);
         }
     }
 

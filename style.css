@@ -45,6 +45,14 @@ select {
     border-bottom: 1px solid white;
     padding-bottom: 10%;
 }
+.question {
+    display: flex;
+    justify-content: space-between;
+}
+label {
+        margin-top: 10%;
+        font-size: 1.1rem;
+}
 textarea {
     resize: none;
     font-size: 1rem;
