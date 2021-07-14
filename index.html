@@ -7,7 +7,6 @@
     <title>Pokémon Card Editor</title>
 </head>
 <body>
-    <main></main>
     <aside>
         <!-- Primary info, set etc... -->
         <div class="content">
@@ -37,12 +36,13 @@
         </div>
 
         <!-- name, hp... -->
-        <div class="content">
+        <div class="content" id="pk-info-content">
             <h2>Pokémon information</h2>
             <small>Name: </small> 
             <input type="text" id="pk-name" placeholder="Ex: Charizard" maxlength="14">
             <small>Life Points(HP): </small> <input type="number" max="1000" id="hp" placeholder="Máx: 999">
-            <small>Pokedex Data info: </small> <input type="text" id="pkd-data-info">
+            <small id="pkd-small">Pokedex Data info: </small> 
+            <input type="text" id="pkd-data-info" placeholder="Breed, Height and Weight">
         </div>
 
         <div class="content">

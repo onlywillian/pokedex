@@ -53,7 +53,7 @@ textarea {
     height: 150px;
     padding: 2%;
 }
-/* Card Preview Style */
+/* Card  pReview Camps Style */
 .camps-container{ 
     position: absolute;
     left: 44.7%;
@@ -91,12 +91,24 @@ textarea {
 }
 .pokedex-camp {
     position: absolute;
-    background-color: black;
     height: 1.1vw;
     width: 75%;
     top: 21.6vw;
     left: 10%;
     text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: .9rem;
+}
+.pr-pokemon-camp {
+    position: absolute;
+    width: 35%;
+    height: 1vw;
+    top: 4.3vw;
+    left: 18%;
+    color: black;
+    font-size: 1rem;
+    font-weight: bolder;
+    font-style: italic;
 }
 .image-preview {
     width: 100%;

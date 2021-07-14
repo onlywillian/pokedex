@@ -5,7 +5,6 @@ const campName = document.querySelector('.name-camp');
 /* pokémon Name */
 pkName.addEventListener("keyup", () => {
     campName.innerHTML = pkName.value;
-    console.log(pkName.size);
     if (pkName.length >= 14) campName.style.fontSize = '18px';
 });
 
@@ -20,12 +19,66 @@ hp.addEventListener("keyup", () => {
     
 });
 
+/* pokédex Entry */
+const pokedex = document.getElementById("pkd-data-info");
+pokedex.addEventListener("keyup", () => {
+    document.querySelector(".pokedex-camp")
+    .innerHTML = pokedex.value;
+})
+
+/* the setting for this function to be called is in the next function. */
+function createStageConfigs() {
+    /* Creating all necessary elements */
+    const small = document.createElement("small");
+    const input = document.createElement("input");
+    const div = document.createElement("div");
+    const pkInfoContent = document.getElementById('pk-info-content');
+    const pkdSmall = document.getElementById("pkd-small");
+
+    /* instancing the elements */
+    pkInfoContent.insertBefore(small, pkdSmall);
+    small.innerHTML = "Previous pokémon:";
+    small.className = "pr-pokemon-info";
+    pkInfoContent.insertBefore(input, pkdSmall);
+    input.setAttribute("type", "text");
+    input.className = "pr-pokemon-text";
+    input.setAttribute("maxLength", "15");
+    document.querySelector(".camps-container")
+    .appendChild(div);
+    div.className = "pr-pokemon-camp";
+
+    /* Inserting input data */
+    input.addEventListener("keyup", () => {
+        if (input.value == '') {
+            div.innerHTML = ''
+            return;
+        }
+        div.innerHTML = "Evolves from "
+        div.innerHTML += input.value
+    });
+}
+
 /* when switch the type, ex: grass, water... */
 function typeSwitch() {
     const pkType = document.getElementById("pk-type").value.toLowerCase();
     const previewImage = document.getElementById("pr-img");
     const miniHp = document.getElementById("mini-hp");
     const folder = document.getElementById("stage").value;
+
+    /*  
+    * If the stage is basic, some things will be modified,
+    * otherwise it will remove them
+    */
+    if (folder != 'st0') createStageConfigs()
+    if (folder === 'st0') {
+        try {
+            document.querySelector(".pr-pokemon-info").remove();
+            document.querySelector(".pr-pokemon-camp").remove();
+            document.querySelector(".pr-pokemon-text").remove();
+        } catch (err) {
+            return
+        }
+    }
 
     /* Changing the font color */
     if (pkType === 'dark') {
@@ -41,4 +94,3 @@ function typeSwitch() {
     /* Set the right image */
     previewImage.setAttribute("src", `img/cards_template/${folder}/${pkType}_${folder}.png`);
 };
-
