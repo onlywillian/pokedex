@@ -1,10 +1,39 @@
-/* 
-* Objetivo: consertar o stage que multiplica
-*/
-
 const pkName = document.getElementById("pk-name");
 const campName = document.querySelector('.name-camp');
 
+/* Importing the images name */
+import types from './types.js';
+import arrows from './arrows.js';
+
+/* Inserting the power cost */
+function powerCostInsert() {
+    const powerCostArea = document.getElementById("move-cost");
+
+    for (let i = 0; i < types.icons.length; i++) {
+        const img = document.createElement("img");
+        const typeDiv = document.createElement("div");
+        const arrowUp = document.createElement("img");
+        const arrowDown = document.createElement("img");
+        const p = document.createElement("p");
+        
+        powerCostArea.appendChild(typeDiv);
+        typeDiv.className = 'cost-type-icon';
+
+        typeDiv.appendChild(arrowUp);
+        arrowUp.setAttribute("src", arrows.arrowUpImages[0]);
+
+        typeDiv.appendChild(img);
+        img.setAttribute("src", types.icons[i]);
+        img.className = 'type-image-icon';
+
+        typeDiv.appendChild(arrowDown);
+        arrowDown.setAttribute("src", arrows.arrowDownImages[0]);
+
+        typeDiv.appendChild(p);
+        p.innerHTML = 'x0';
+    }
+}
+powerCostInsert();
 
 /* pokémon Name */
 pkName.addEventListener("keyup", () => {
@@ -40,7 +69,7 @@ function createStageConfigs(stage) {
     const pkInfoContent = document.getElementById('pk-info-content');
     const pkdSmall = document.getElementById("pkd-small");
 
-    if (stage != "st0") return
+    if (stage != "st0") return stageConfigExists == true;
     else {
         /* instancing the elements */
         pkInfoContent.insertBefore(small, pkdSmall);
@@ -58,11 +87,11 @@ function createStageConfigs(stage) {
     /* Inserting input data */
     input.addEventListener("keyup", () => {
         if (input.value == '') {
-            div.innerHTML = ''
+            div.innerHTML = '';
             return;
         }
-        div.innerHTML = "Evolves from "
-        div.innerHTML += input.value
+        div.innerHTML = "Evolves from ";
+        div.innerHTML += input.value;
     });
 }
 
