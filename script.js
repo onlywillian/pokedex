@@ -131,3 +131,10 @@ function typeSwitch() {
     /* Set the right image */
     previewImage.setAttribute("src", `img/cards_template/${folder}/${pkType}_${folder}.png`);
 };
+
+/* Weakness config */
+const desc = document.getElementById('desc-text');
+const descCamp = document.querySelector('.desc-camp');
+desc.addEventListener("keyup", () => {
+    descCamp.innerHTML = desc.value;
+});

@@ -131,6 +131,18 @@ textarea {
     font-weight: bolder;
     font-style: italic;
 }
+.desc-camp {
+    position: absolute;
+    color: black;
+    width: 43%;
+    height: 3vw;
+    top: 40.5vw;
+    right: 5%;
+    font-size: .9rem;
+    font-weight: bolder;
+}
+
+
 .image-preview {
     width: 100%;
     display: grid;
