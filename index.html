@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./camps.css">
     <title>Pokémon Card Editor</title>
 </head>
 <body>
@@ -54,7 +55,7 @@
             <h2>Power</h2>
             <small>Power Name: </small> <input type="text" id="">
             <small>Power Damage: </small> <input type="text">
-            <small>Power Cost: </small> <div id="move-cost">
+            <small>Power Cost: (máx: 4)</small> <div id="move-cost">
                 
             </div>
             <small>Power Text: </small> <textarea id=""></textarea>
@@ -67,7 +68,7 @@
         <!-- Weakness -->
         <div class="content">
             <h2>Weakness</h2>
-            <small>Weakness Type</small> <select id="">
+            <small>Weakness Type</small> <select id="weak-type" onchange="insertWeakTypeImages()">
                 <option>Grass</option>
                 <option>Fire</option>
                 <option>Water</option>
@@ -78,8 +79,9 @@
                 <option>Metal</option>
                 <option>Colorless</option>
             </select>
-            <small>Weakness Amount: </small> <input type="number" id="">
-            <small>Resistance Type: </small> <select id="">
+            <small>Weakness Amount: </small> <input type="number" id="weak-amount" 
+            placeholder="Máx: 99">
+            <small>Resistance Type: </small> <select id="res-type">
                 <option>None</option>
                 <option>Grass</option>
                 <option>Fire</option>
@@ -91,7 +93,8 @@
                 <option>Metal</option>
                 <option>Colorless</option>
             </select>
-            <small>Retreat Cost: </small> <input type="number" id="">
+            <small>Retreat Cost:</small> <input type="number" id="retreat-cost" max="5" 
+            placeholder="Máx: 5">
         </div>
         <!-- Description and image camps -->
         <div class="content">
@@ -104,21 +107,35 @@
             <label for="pokemonImage"></label>
             <small>Pokémon Image(URL): </small> <input type="file" id="pokemonImage">
             <label for="pokemonImage"></label>
+            <small>Other Image: </small> <input type="file" id="pokemonImage">
+            <label for="pokemonImage"></label>
         </div>
     </aside>
 
-    <!-- The image preview -->
+    <!-- The camps in image -->
     <div class="image-preview">
         <div class="camps-container">
             <div class="name-camp"></div>
             <div class="hp-camp"> <small id="mini-hp">HP</small> <p id="hp-number">0</p></div>
             <div class="pokedex-camp"></div>
             <div class="desc-camp"></div>
+
+            <div class="weak-type-camp">
+                <img src="img/type_icons/types/Grass.png" id="weak-type-image">
+            </div>
+            <div class="weak-amount-camp">
+                <small>x</small> <span id="weak-amount-result">2</span>
+            </div>
+            <div class="res-type-camp"></div>
+            <div class="retreat-camp">
+                <img src="img/type_icons/types/Colorless.png">
+            </div>
             <img src="img/cards_template/st0/grass_st0.png" alt="The Pokemon Actualy Image" id="pr-img">
         </div>
         
     </div>
 
     <script src="./script.js" type="module"></script>
+    <script src="./listeners.js"></script>
 </body>
 </html>

@@ -1,0 +1,129 @@
+/* Card Review Camps Style */
+.camps-container{ 
+    position: absolute;
+    left: 44.7%;
+    height: 89.5%;
+    width: 32.5%;
+    margin-top: 2.4%;
+    justify-self: center;
+}
+.name-camp {
+    height: 2vw;
+    width: 45%;
+    position: absolute;
+    top: 1.8vw;
+    left: 20%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    font-size: 2.3rem;
+    color: black;
+}
+.hp-camp {
+    height: 2.3vw;
+    width: 15%;
+    position: absolute;
+    right: 11%;
+    top: 1.8vw;
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    color: black;
+    font-size: 2.5rem;
+    text-align: right;
+}
+.hp-camp small {
+    font-size: .8rem;
+    align-self: flex-end;
+}
+.pokedex-camp {
+    position: absolute;
+    height: 1.1vw;
+    width: 75%;
+    top: 21.6vw;
+    left: 10%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: .9rem;
+}
+.pr-pokemon-camp {
+    position: absolute;
+    width: 35%;
+    height: 1vw;
+    top: 4.3vw;
+    left: 18%;
+    color: black;
+    font-size: 1rem;
+    font-weight: bolder;
+    font-style: italic;
+}
+/* Weakness style */
+.weak-type-camp {
+    position: absolute;
+    height: 1.2vw;
+    width: 3%;
+    top: 38.9vw;
+    left: 16%;
+    display: flex;
+    align-items: center;
+}
+.weak-type-camp img {
+    height: 100%;
+}
+.weak-amount-camp {
+    position: absolute;
+    height: 1.2vw;
+    width: 7%;
+    top: 38.9vw;
+    left: 21%;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.weak-amount-camp small {
+    align-self: center;
+    vertical-align: text-top;
+}
+.res-type-camp {
+    background-color: black;
+    position: absolute;
+    height: 1.2vw;
+    width: 3%;
+    top: 38.9vw;
+    left: 42%;
+    display: flex;
+    align-items: center;
+}
+.retreat-camp {
+    height: 1.2vw;
+    width: 21%;
+    position: absolute;
+    right: 6%;
+    top: 38.9vw;
+    display: flex;
+    align-items: center;
+}
+.retreat-camp img {
+    height: 80%;
+}
+.desc-camp {
+    position: absolute;
+    color: black;
+    width: 43%;
+    height: 3vw;
+    top: 40.5vw;
+    right: 5%;
+    font-size: .9rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+/* image and canvas style */
+.image-preview {
+    width: 100%;
+    display: grid;
+}
+#pr-img {
+    width: 100%;
+    justify-self: center;
+}
